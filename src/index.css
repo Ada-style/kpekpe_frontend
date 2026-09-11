@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 145 10% 97%;
+    --foreground: 0 0% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 145 100% 29%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 145 80% 38%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 145 10% 95%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 56 99% 50%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 4 82% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 145 100% 29%;
+
+    --radius: 0.75rem;
+
+    /* ── Kpékpé brand tokens from real logo ── */
+    /* Base: #00963F */
+    --kpe-green: 145 100% 29%;
+    --kpe-green-mid: 145 80% 36%;
+    --kpe-green-soft: 145 55% 48%;
+    --kpe-green-light: 145 40% 72%;
+    --kpe-green-pale: 145 50% 95%;
+
+    /* Base: #FEEC01 */
+    --kpe-yellow: 56 99% 50%;
+    --kpe-yellow-warm: 52 99% 55%;
+    --kpe-yellow-pale: 54 100% 94%;
+
+    /* Legacy gold/orange aliases → yellow */
+    --kpe-gold: 56 99% 50%;
+    --kpe-gold-warm: 52 99% 55%;
+    --kpe-gold-pale: 54 100% 94%;
+    --kpe-orange: 56 99% 50%;
+    --kpe-orange-warm: 52 99% 55%;
+    --kpe-orange-pale: 54 100% 94%;
+
+    /* IKIGAI pillars */
+    --kpe-passion: 4 82% 56%;
+    --kpe-talent: 145 100% 29%;
+    --kpe-besoins: 56 99% 50%;
+    --kpe-aspiration: 230 45% 45%;
+
+    /* Neutrals */
+    --kpe-dark: 0 0% 8%;
+    --kpe-gray: 0 0% 40%;
+    --kpe-gray-light: 0 0% 92%;
+
+    --font-display: 'Poppins', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    --shadow-card: 0 4px 20px -4px hsl(145 100% 29% / 0.08);
+    --shadow-elevated: 0 12px 40px -8px hsl(145 100% 29% / 0.15);
+    --shadow-glow: 0 0 30px hsl(145 100% 29% / 0.2);
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--kpe-green)), hsl(var(--kpe-green-mid)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--kpe-yellow)), hsl(var(--kpe-yellow-warm)));
+    --gradient-hero: linear-gradient(160deg, hsl(var(--kpe-green)) 0%, hsl(var(--kpe-green-mid)) 50%, hsl(var(--kpe-green-soft)) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 145 80% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 145 60% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 56 99% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 4 82% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 145 80% 40%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .kpe-phone-shell {
+    width: 375px;
+    height: 812px;
+    border-radius: 44px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 
+      0 0 0 2px hsl(var(--kpe-gray-light)),
+      0 25px 80px -12px rgba(0,0,0,0.35),
+      inset 0 0 0 1px rgba(255,255,255,0.1);
+  }
+
+  .kpe-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .kpe-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .kpe-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .kpe-card {
+    background: hsl(var(--card));
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .kpe-card-elevated {
+    background: hsl(var(--card));
+    border-radius: 20px;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .kpe-scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .kpe-scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .kpe-pulse {
+    animation: kpe-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes kpe-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+  }
+
+  @keyframes kpe-dots {
+    0%, 80%, 100% { transform: scale(0.3); opacity: 0.3; }
+    40% { transform: scale(1); opacity: 1; }
+  }
+
+  .kpe-dot-anim {
+    animation: kpe-dots 1.4s ease-in-out infinite;
+  }
+}
