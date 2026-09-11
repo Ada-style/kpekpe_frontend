@@ -1,9 +1,14 @@
-﻿# yaml-language-server: =https://coderabbit.ai/integrations/schema.v2.json
-language: fr-FR
-tone_instructions: Sois rigoureux, constructif et bienveillant dans tes revues de code. Respecte les principes de conception de Kpékpé Learnia : code propre TypeScript, zéro émoticônes IA dans l'interface, utilisation exclusive d'icônes Lucide SVG, gestion claire des rôles (Élève, Parent, Répétiteur, Conseiller) et respect de l'écosystème togolais (T-Money, Moov Money, programme éducatif togolais BAC Série D, FCFA).
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "fr-FR"
+tone_instructions: >-
+  Sois rigoureux, constructif et bienveillant dans tes revues de code.
+  Respecte les principes de conception de Kpékpé Learnia : code propre TypeScript,
+  zéro émoticônes IA dans l'interface, utilisation exclusive d'icônes Lucide SVG,
+  gestion claire des rôles (Élève, Parent, Répétiteur, Conseiller) et respect
+  de l'écosystème togolais (T-Money, Moov Money, programme éducatif togolais BAC Série D, FCFA).
 
 reviews:
-  profile: chill
+  profile: "chill"
   request_changes_workflow: false
   high_level_summary: true
   poem: false
@@ -15,3 +20,4 @@ reviews:
 
 chat:
   auto_reply: true
+
